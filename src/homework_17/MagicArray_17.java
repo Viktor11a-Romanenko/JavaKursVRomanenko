@@ -1,10 +1,27 @@
-package lesson_16;
+package homework_17;
 
-public class MagicArray {
-    int[] array;
-    int cursor;
+public class MagicArray_17 {
+    private int[] array;
+    private int cursor;
 
-    public MagicArray() {
+    public int getCursor() {
+        return cursor;
+    }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
+    public void setCursor(int cursor) {
+
+
+    }
+
+    public MagicArray_17() {
         array = new int[10];
     }
 
@@ -83,9 +100,9 @@ public class MagicArray {
         //todo поправить обработку не корректного индекса
     }
 
-    // Удаление элемента по индексу
+    // 7. Удаляет элемент по индексу (Есть индекс - удалить это значение в массиве)
     int remove(int index) {
-        /*
+         /*
         1. Проверка индекса на валидность
         2. Удалить значение по индексу
         3. Передвинуть курсор (т.к. кол-во элементов уменьшилось)
@@ -125,7 +142,6 @@ public class MagicArray {
     // Метод поиска по значению. Поиск последнего вхождения
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс последнего найдено вхождения = 4
     int lastIndexOf(int value) {
-        // Todo реализовать
         return -1;
     }
 
@@ -143,6 +159,7 @@ public class MagicArray {
         return true;
     }
 
+
 }
 
 /*
@@ -156,5 +173,6 @@ public class MagicArray {
 8. Конструктор, принимающий массив ++
 9. Удаление по значению
 10. Поиск по значению. Возвращает индекс ++
+
  */
 
