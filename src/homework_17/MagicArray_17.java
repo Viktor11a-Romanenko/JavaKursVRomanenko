@@ -4,29 +4,13 @@ public class MagicArray_17 {
     private int[] array;
     private int cursor;
 
-    public int getCursor() {
-        return cursor;
-    }
-
-    public int[] getArray() {
-        return array;
-    }
-
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
-    public void setCursor(int cursor) {
-
-
-    }
 
     public MagicArray_17() {
         array = new int[10];
     }
 
     // 1. Добавление а массив одного элемента
-    void add(int value) {
+    public void add(int value) {
         // Проверка.Ест ли вообще свободное место во внутреннем масиве,
         // если места нет, то нужно добавить
         if (cursor == array.length - 1) {
@@ -38,7 +22,7 @@ public class MagicArray_17 {
     }
 
     //4. Добовляеи в массив сразу несколько значений
-    void add(int... numbers) {
+    public void add(int... numbers) {
         // c numbers  я могу обращаться как со ссылкой на массив int
         //System.out.println("Приняли несколько интов в количестве: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
@@ -49,7 +33,7 @@ public class MagicArray_17 {
     }
 
     // 2. Динамическое изменение размера массива
-    void expandArray() {
+    private void expandArray() {
         System.out.println("Расширяем массив! Курсор: " + cursor);
         /*
         Plan
@@ -86,12 +70,12 @@ public class MagicArray_17 {
     }
 
     //5.Текущее количество элементов в массиве
-    int size() {
+    public int size() {
         return cursor;
     }
 
     //6. Возвращает значение по индексу
-    int get(int index) {
+    public int get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
         }
@@ -101,7 +85,7 @@ public class MagicArray_17 {
     }
 
     // 7. Удаляет элемент по индексу (Есть индекс - удалить это значение в массиве)
-    int remove(int index) {
+    public int remove(int index) {
          /*
         1. Проверка индекса на валидность
         2. Удалить значение по индексу
@@ -130,7 +114,7 @@ public class MagicArray_17 {
 
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
-    int indexOf(int value) {
+    public int indexOf(int value) {
         for (int i = 0; i < cursor; i++) {
             if (array[i] == value) {
                 return i;
@@ -141,12 +125,20 @@ public class MagicArray_17 {
 
     // Метод поиска по значению. Поиск последнего вхождения
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс последнего найдено вхождения = 4
-    int lastIndexOf(int value) {
+    public int lastIndexOf(int value) {
+        int index = -1;
+
+        for (int i = cursor - 1; i >= 0; i--) {
+            if (array[i] == value) {
+                return i;
+            }
+
+        }
         return -1;
     }
 
     // Удаление элемента по значению
-    boolean removeByValue(int value) {
+    public boolean removeByValue(int value) {
         /*
         1. Есть ли элемент с таким значение в массиве - indexOf
         2. Если элемента нет - вернуть false
@@ -173,6 +165,8 @@ public class MagicArray_17 {
 8. Конструктор, принимающий массив ++
 9. Удаление по значению
 10. Поиск по значению. Возвращает индекс ++
+11.
+
 
  */
 

@@ -38,6 +38,7 @@ public class Employee {
         this.salary = salary;
     }
 
+
     public void whoAmI(String name, int age, double salary) {
         System.out.printf("Меня зовут %s, мой возраст: %d, моя зарплата: %d\n", this.name, this.age, this.salary);
 
