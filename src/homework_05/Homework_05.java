@@ -64,7 +64,7 @@ public class Homework_05 {
         System.out.println("update: " + update);
         System.out.println("Boolean: " + answer);
 
-        /*Проблема
+        /*
         Task 3* (Опционально)
         Попросите пользователя ввести строку чётной длины с клавиатуры.
         Распечатайте два средних символа строки.
