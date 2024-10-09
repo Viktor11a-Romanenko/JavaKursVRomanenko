@@ -59,7 +59,7 @@ public class Homework_06 {
 
         String concat = "Число" + " " + number + " " + "четное: " + x1 + "; " + "кратное 3: " + x2 + " ; " + " четное и кратное 3 " + x3;
         System.out.println(concat);
-        // todo "переписать з дз"
+
 
         /*
         Task 4

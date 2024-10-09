@@ -13,7 +13,7 @@ public class Task_01 {
         System.out.print("Массив в обратном порядке:" + " { ");
 
         while (i >= 0) {
-            
+
             System.out.print(array[i] + " ");
             i--;
 
@@ -21,7 +21,7 @@ public class Task_01 {
         System.out.println(" } ");
 
     }
-    // не получаеться todo
+
 
     public static void printArrayReverse(int[] array, int index) {
         int i = array.length - 1;
