@@ -2,8 +2,6 @@ package homework_19;
 
 public class Calculator {
 
-    private double a;
-    private double b;
     public static final double PI = 3.141519;
 
 
@@ -28,7 +26,7 @@ public class Calculator {
     }
 
     public static double length(final double PI, double r) {
-        return (2 * PI) * r;
+        return 2 * PI * r;
 
     }
 
