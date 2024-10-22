@@ -2,15 +2,15 @@ package homework_25;
 
 
 public class MagicArrayString {
-    private String[] array; // Todo
+    private String[] array; //
     private int cursor; // присвоено значение по умолчанию = 0;
 
     @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
     public MagicArrayString() {
-        array = new String[10]; // Todo
+        array = new String[10];
     }
 
-    // Todo
+
     public MagicArrayString(String[] array) {
         if (array == null || array.length == 0) {
             this.array = new String[10];
@@ -21,7 +21,7 @@ public class MagicArrayString {
     }
 
     // Добавление в массив одного элемента
-    public void add(String value) { // Todo
+    public void add(String value) {
 
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
@@ -35,7 +35,7 @@ public class MagicArrayString {
         cursor++;
     }
 
-    // Todo
+    //
     public void add(String... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
@@ -120,7 +120,7 @@ public class MagicArrayString {
 
         } else {
 //           Индекс не валидный
-            // Todo поправить возвращаемое значение при невалидном индексе
+
             return null;
         }
     }
