@@ -1,11 +1,13 @@
-package lesson_29.persons;
+package lesson_30.persons;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
+import org.junit.jupiter.params.provider.*;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -83,8 +85,65 @@ class TestExample {
     @CsvFileSource(resources = "data.csv")
     void testCsvFileSource(String fruit, int rank, boolean flag) {
         System.out.println(fruit + " | " + rank + " | " + !flag);
+        assertNotNull(fruit);
+        assertTrue(rank > 0);
+    }
 
 
+    //
+    @ParameterizedTest
+    @MethodSource("testDataFruits")
+    void testMethodSource(String friut) {
+        System.out.println(friut);
+        assertNotNull(friut);
+    }
+
+
+    static Stream<String> testDataFruits() {
+        return Stream.of("apple", "banana", "cherry");
+    }
+
+    @ParameterizedTest
+    @MethodSource("testDateInt")
+    void testMethodSource2(int value) {
+        System.out.println("current value" + value);
+        assertNotEquals(100, value);
+    }
+
+    static Stream<Integer> testDateInt() {
+        return Stream.of(1, 2, -1, 4, 5);
+    }
+
+    @ParameterizedTest
+    @MethodSource("testDataArguments")
+    void testMethodSource3(int value, int expected, boolean isEquals) {
+        System.out.println(value + " | " + expected + " | " + isEquals);
+        int result = value * value;
+        //assertEquals(expected, result);
+        assertEquals(isEquals, result == expected);
+    }
+
+    static Stream<Arguments> testDataArguments() {
+        return Stream.of(
+                Arguments.of(2, 4, true),
+                Arguments.of(3, 9, true),
+                Arguments.of(4, 15, false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("testPersonsDate")
+    void testPersonsDate(Person person, String newEmail) {
+        System.out.println(person);
+        System.out.println(newEmail);
+    }
+
+
+    static Stream<Arguments> testPersonsDate() {
+        return Stream.of(
+                Arguments.of(new Person("test@mail.com", "pass1Q!4"), "new1234@mail.com"),
+                Arguments.of(new Person("invaild.mail.com", "password"), "mail.test.com")
+        );
     }
 
 
