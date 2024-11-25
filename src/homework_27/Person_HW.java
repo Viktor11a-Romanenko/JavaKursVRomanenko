@@ -45,21 +45,16 @@ public class Person_HW {
 
     private boolean isEmailValid(String email) {
 
-        // 1. Должна присутствовать @
         int indexAt = email.indexOf('@');
-        // int lastAt = email.lastIndexOf('@');
         if (indexAt == -1 || indexAt != email.lastIndexOf('@')) return false;
 
-        // 2. Точка после собаки
         int dotIndexAfterAt = email.indexOf('.', indexAt + 1);
         if (dotIndexAfterAt == -1) return false;
 
-
-        // 3. После последней точки есть 2 или более символов
         int lastDotIndex = email.lastIndexOf('.');
         if (lastDotIndex + 2 >= email.length()) return false;
 
-        // 4.  Алфавит, цифры, '-', '_', '.', '@'
+
         for (int i = 0; i < email.length(); i++) {
             char ch = email.charAt(i);
 
@@ -75,10 +70,10 @@ public class Person_HW {
 
         }
 
-        // 5. До собаки должен быть хотя бы 1 символ
+
         if (indexAt == 0) return false;
 
-        // 6. Первый символ - должна быть буква
+
         char firstChar = email.charAt(0);
         if (!Character.isAlphabetic(firstChar)) return false;
 
@@ -129,15 +124,3 @@ public class Person_HW {
     }
 }
 
-/*
-Требование к паролю:
-1. длина >= 8
-2. Должна быть мин 1 цифра
-3. Должна быть мин 1 маленькая буква
-4. Должна быть мин 1 большая буква
-5. Должна быть мин 1 спец. символ (!%$@&*()[].,-)
-
-5 boolean переменных. Каждая "отвечает за свой пункт".
-Пароль будет подходить только если все пять - true
-return b1 && b2 && b3 && b4 && b5;
- */
